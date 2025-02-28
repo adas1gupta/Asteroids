@@ -36,7 +36,12 @@ def main():
             if ast.collides_with(player):
                 print("Game over!")
                 sys.exit()
-        
+            
+            for shot in shots:
+                if ast.collides_with(shot):
+                    shot.kill()
+                    ast.kill()
+
         screen.fill("black")
         
         for obj in drawable:
